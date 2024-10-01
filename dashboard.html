@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - SMAN 78 JAKARTA</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="dashboard.js" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container" data-aos="fade-right">
+                <img src="logo-sman78.image.png" alt="Logo SMAN 78 Jakarta" class="logo-image">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-aos="fade-right" data-aos-delay="100"><a href="#overview" class="active gradient-text"><i class="fas fa-home"></i> Beranda</a></li>
+                    <li data-aos="fade-right" data-aos-delay="200"><a href="#users" class="gradient-text"><i class="fas fa-users"></i> Pengguna</a></li>
+                    <li data-aos="fade-right" data-aos-delay="300"><a href="#subjects" class="gradient-text"><i class="fas fa-book"></i> Mata Pelajaran</a></li>
+                    <li data-aos="fade-right" data-aos-delay="400"><a href="#materials" class="gradient-text"><i class="fas fa-file-alt"></i> Materi</a></li>
+                    <li data-aos="fade-right" data-aos-delay="500"><a href="#settings" class="gradient-text"><i class="fas fa-cog"></i> Pengaturan</a></li>
+                </ul>
+            </nav>
+            <!-- Tambahkan pemilih tema di sini -->
+            <div class="theme-selector-container" data-aos="fade-right" data-aos-delay="600">
+                <label for="theme-selector" class="gradient-text">Pilih Tema:</label>
+                <select id="theme-selector" aria-label="Pilih Tema">
+                    <option value="default" class="theme-option">Gradien</option>
+                    <option value="light" class="theme-option">Light</option>
+                    <option value="dark" class="theme-option">Dark</option>
+                </select>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="700">
+                <a href="#" id="exitToDashboard"><i class="fas fa-sign-out-alt"></i> Keluar ke Halaman Utama</a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <header class="dashboard-header" data-aos="fade-down">
+                <h1>Dashboard Admin</h1>
+                <div class="user-info">
+                    <span id="clock"></span>
+                    <img src="https://via.placeholder.com/40" alt="Admin Avatar" class="avatar">
+                </div>
+            </header>
+            <section id="overview" class="dashboard-section" data-aos="fade-up">
+                <h2 class="section-title">Ikhtisar</h2>
+                <div class="stats-grid">
+                    <div class="stat-card" style="animation-delay: 0.1s;">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Siswa</h3>
+                            <p class="counter" data-target="1234">0</p>
+                        </div>
+                        <svg class="progress-ring">
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="30" cx="35" cy="35"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card" style="animation-delay: 0.2s;">
+                        <div class="stat-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Guru</h3>
+                            <p class="counter" data-target="87">0</p>
+                        </div>
+                        <svg class="progress-ring">
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="30" cx="35" cy="35"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card" style="animation-delay: 0.3s;">
+                        <div class="stat-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Mata Pelajaran</h3>
+                            <p class="counter" data-target="15">0</p>
+                        </div>
+                        <svg class="progress-ring">
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="30" cx="35" cy="35"/>
+                        </svg>
+                    </div>
+                    <div class="stat-card" style="animation-delay: 0.4s;">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Total Materi</h3>
+                            <p class="counter" data-target="456">0</p>
+                        </div>
+                        <svg class="progress-ring">
+                            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="30" cx="35" cy="35"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            <section id="recent-activities" class="dashboard-section" data-aos="fade-up">
+                <h2>Aktivitas Terbaru</h2>
+                <ul class="activity-list">
+                    <li style="animation-delay: 0.1s;">Aktivitas 1</li>
+                    <li style="animation-delay: 0.2s;">Aktivitas 2</li>
+                    <li style="animation-delay: 0.3s;">Aktivitas 3</li>
+                    <!-- ... -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <!-- Tambahkan ini sebelum tag </body> -->
+    <button id="backToTopBtn" title="Kembali ke Atas">
+        <span class="arrow-up"></span>
+        <span class="button-text">Kembali ke Atas</span>
+    </button>
+    <button id="scrollToBottomBtn" title="Gulir ke Bawah">
+        <span class="arrow-down"></span>
+        <span class="button-text">Gulir ke Bawah</span>
+    </button>
+    <script>
+        function toggleScrollButtons() {
+            const topBtn = document.getElementById("backToTopBtn");
+            const bottomBtn = document.getElementById("scrollToBottomBtn");
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight;
+            const clientHeight = document.documentElement.clientHeight;
+
+            if (scrollTop > 20) {
+                topBtn.classList.add("show");
+            } else {
+                topBtn.classList.remove("show");
+            }
+
+            if (scrollHeight > clientHeight && scrollTop + clientHeight < scrollHeight - 20) {
+                bottomBtn.classList.add("show");
+            } else {
+                bottomBtn.classList.remove("show");
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function scrollToBottom() {
+            window.scrollTo({top: document.documentElement.scrollHeight, behavior: 'smooth'});
+        }
+
+        window.addEventListener('scroll', toggleScrollButtons);
+        window.addEventListener('load', toggleScrollButtons);
+        document.getElementById("backToTopBtn").addEventListener('click', scrollToTop);
+        document.getElementById("scrollToBottomBtn").addEventListener('click', scrollToBottom);
+    </script>
+    <script>
+        document.getElementById('exitToDashboard').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = "index.html";
+        });
+    </script>
+    <script>
+        const themeSelector = document.getElementById('theme-selector');
+
+        themeSelector.addEventListener('change', function() {
+            const selectedTheme = this.value;
+            document.documentElement.setAttribute('data-theme', selectedTheme);
+            // Simpan preferensi tema ke localStorage
+            localStorage.setItem('selectedTheme', selectedTheme);
+        });
+
+        // Periksa tema yang tersimpan saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                themeSelector.value = savedTheme;
+            }
+        });
+    </script>
+</body>
+</html>

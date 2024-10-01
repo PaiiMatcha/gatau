@@ -1,0 +1,1022 @@
+:root {
+    --primary-gradient: linear-gradient(135deg, #FFF200, #FF4500, #FF8C00);
+    --secondary-gradient: linear-gradient(135deg, #FF8C00, #FF4500, #FFF200);
+    --text-color: #333; 
+    --background-color: #f4f4f4;
+    --accent-color: #FF4500;
+    --orange-gradient: linear-gradient(135deg, #FF8C00, #FF4500);
+    --background-image: url('path/to/sman-78.jpeg');
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --primary-gradient: linear-gradient(135deg, #FFF, #DDD);
+    --secondary-gradient: linear-gradient(135deg, #EEE, #CCC);
+    --text-color: #333; /* Warna teks lebih gelap untuk tema terang */
+    --background-color: #FFF;
+    --accent-color: #FF4500;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --primary-gradient: linear-gradient(135deg, #333, #111);
+    --secondary-gradient: linear-gradient(135deg, #444, #222);
+    --text-color: #E0E0E0; /* Warna teks lebih terang untuk tema gelap */
+    --background-color: #1e1e1e;
+    --accent-color: #FF6347; /* Warna aksen yang lebih terang untuk tema gelap */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color); /* Menggunakan variabel warna teks */
+    background-color: var(--background-color); /* Latar belakang menggunakan variabel */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hero-description, .section-title, .about-us p, .about-us h1 {
+    color: var(--text-color); /* Semua teks juga menggunakan warna variabel ini */
+}
+
+header {
+    background: var(--primary-gradient);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    color: var(--text-color);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        padding: 0rem;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 0rem;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: var(--text-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav-links li {
+    margin-right: 1rem;
+}
+
+/* Hapus atau komentari bagian ini
+.login-button {
+    margin-left: 1rem;
+    background: var(--secondary-gradient);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+*/
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+#theme-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--primary-gradient);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#theme-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+
+main {
+    padding-top: 60px;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-gradient);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.hero-description {
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 0.5rem;
+    color: white; /* Mengubah warna teks menjadi putih */
+    line-height: 1.4;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 900;
+    background: var(--orange-gradient);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem; /* Tambahkan margin bawah yang lebih besar */
+    animation: pulse 2s infinite;
+}
+
+.content {
+    position: relative;
+    padding: 4rem 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    color: var(--text-color)
+}
+
+.subject-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    color: var(--text-color)
+}
+
+.subject-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.subject-card i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #FF4500;
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.subject-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover h3 {
+    color: var(--accent-color);
+}
+
+.subject-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.subject-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover li {
+    transform: translateX(5px);
+}
+
+.subject-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.subject-link:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* AOS custom animations */
+[data-aos="custom-fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition-property: opacity, transform;
+}
+
+[data-aos="custom-fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .subjects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .subject-card {
+        padding: 1.5rem;
+    }
+
+    .subject-card i {
+        font-size: 2.5rem;
+    }
+
+    .subject-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+footer {
+    flex-shrink: 0;
+    background: var(--secondary-gradient);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center; /* Ubah menjadi center */
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row; /* Ubah menjadi row */
+        justify-content: center; /* Ubah menjadi center */
+        width: 100%;
+        background: var(--primary-gradient);
+        padding: 0.5rem;
+        list-style-type: none;
+        flex-wrap: wrap; /* Tambahkan ini untuk memungkinkan wrapping */
+    }
+
+    .nav-links li {
+        margin: 0.25rem 0.5rem; /* Tambahkan margin atas dan bawah */
+    }
+
+    .nav-links a {
+        font-size: 0.8rem; /* Ukuran font lebih kecil untuk layar kecil */
+        padding: 0.3rem 0.5rem;
+        white-space: nowrap; /* Mencegah teks wrapping */
+    }
+
+    .menu-toggle {
+        display: none; /* Sembunyikan tombol toggle menu */
+    }
+
+    /* Hapus atau komentari bagian ini
+    .login-button {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    */
+
+    .hero {
+        height: 40vh;
+        padding: 0.5rem 0.4rem;
+    }
+
+    .logo-image {
+        max-width: 250px;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-description {
+        font-size: 0.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+.about-us {
+    padding: 4rem 2rem; /* Menambahkan padding horizontal */
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow: hidden; /* Menambahkan ini untuk menghindari scrollbar horizontal saat animasi */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image, .about-text {
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text-content {
+    padding: 2rem;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.about-us h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.about-us p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .about-us h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-us p {
+        font-size: 1rem;
+    }
+
+    .feature {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-us {
+        padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-us h1 {
+        font-size: 2rem;
+    }
+
+    .about-image {
+        max-width: 300px;
+    }
+
+    .feature {
+        flex: 0 0 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature i {
+        font-size: 2rem;
+    }
+
+    .feature span {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-us {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .about-us h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-us p {
+        font-size: 0.9rem;
+    }
+
+    .about-image {
+        max-width: 250px;
+    }
+
+    .feature i {
+        font-size: 1.8rem;
+    }
+
+    .feature span {
+        font-size: 0.9rem;
+    }
+}
+
+/*** Footer ***/
+.footer {
+    background-color: #343a40;
+    padding: 30px 0 15px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.footer h5 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .btn-social {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.footer .btn-social:hover {
+    color: #343a40;
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.footer .email-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.footer .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--text-color);
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+    max-width: 250px;
+    width: 100%;
+}
+
+.footer .form-control::placeholder {
+    color: var(--text-color)
+}
+
+.footer .btn-primary {
+    background: var(--orange-gradient);
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.footer .copyright {
+    padding-top: 15px;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.footer .copyright a {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer .copyright a:hover {
+    color: #0d6efd;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer {
+        text-align: center;
+    }
+
+    .footer .btn-social {
+        margin: 0 4px 8px;
+    }
+}
+
+/* Tambahkan gaya untuk tombol login */
+.login-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--orange-gradient);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 2rem; /* Meningkatkan margin atas */
+}
+
+.login-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Tambahkan responsivitas untuk tombol login */
+@media screen and (max-width: 768px) {
+    .login-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Tambahkan animasi untuk elemen-elemen utama */
+.hero-content, .subject-card, .about-content, .feature {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tambahkan efek hover yang lebih menarik untuk kartu mata pelajaran */
+.subject-card {
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Tambahkan animasi untuk ikon di kartu mata pelajaran */
+.subject-card i {
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Tambahkan efek parallax untuk latar belakang hero */
+.hero {
+    background-attachment: fixed;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Tambahkan animasi untuk tombol login */
+.login-button {
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+    }
+}
+
+/* Tambahkan efek hover yang lebih menarik untuk tautan navigasi */
+.nav-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Tambahkan animasi untuk judul bagian */
+.section-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    animation: underline 2s ease-out forwards;
+}
+
+@keyframes underline {
+    to {
+        width: 100%;
+    }
+}
+
+/* Tambahkan efek hover untuk fitur di bagian "Tentang Kami" */
+.feature {
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tambahkan animasi untuk ikon media sosial di footer */
+.footer .btn-social {
+    transition: all 0.3s ease;
+}
+
+.footer .btn-social:hover {
+    transform: translateY(-3px) rotate(5deg);
+}
+
+.view-material-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #FF8C00, #FF4500);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    margin-top: 15px;
+}
+
+.view-material-btn .btn-text {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.view-material-btn .btn-icon {
+    position: absolute;
+    right: -20px;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.view-material-btn:hover .btn-text {
+    transform: translateX(-10px);
+}
+
+.view-material-btn:hover .btn-icon {
+    right: 20px;
+    opacity: 1;
+}
+
+.view-material-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FF4500, #FF8C00);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.view-material-btn:hover::before {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 69, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+    }
+}
+
+.view-material-btn {
+    animation: pulse 2s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.subject-card {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animated-container {
+    perspective: 1000px;
+}
+
+.subject-card {
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    animation: float 3s ease-in-out infinite;
+}
+
+.subject-card:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subject-card {
+    animation: fadeIn 0.5s ease-out forwards, float 3s ease-in-out infinite;
+    opacity: 0;
+}
+
+.subject-card:nth-child(1) { animation-delay: 0.1s; }
+.subject-card:nth-child(2) { animation-delay: 0.2s; }
+.subject-card:nth-child(3) { animation-delay: 0.3s; }
+.subject-card:nth-child(4) { animation-delay: 0.4s; }
+
+.subject-card i {
+    transition: all 0.3s ease;
+}
+
+.subject-card:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: #FF4500;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    animation: gridFadeIn 1s ease-out forwards;
+}
+
+@keyframes gridFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

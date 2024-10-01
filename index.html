@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMAN 78 JAKARTA - Sumber Belajar Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="dashboard.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#daftar-isi">Daftar Isi</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+            <select id="theme-selector" aria-label="Pilih Tema">
+            <option value="default" class="theme-option">Gradien</option>
+            <option value="light" class="theme-option">Light</option>
+            <option value="dark" class="theme-option">Dark</option>
+        </select>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="beranda" class="hero">
+            <div class="hero-content" >
+                <div class="logo-container" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <img src="logo-sman-78-jkt-white.png" alt="Logo SMAN 78 Jakarta" class="logo-image">
+                </div>
+                <p class="hero-description" data-aos="zoom-in-up" data-aos-duration="1200">Sumber belajar online terlengkap untuk siswa SMAN 78 Jakarta</p>
+                <p class="hero-subtitle" data-aos="zoom-in-up" data-aos-duration="2000">78BELAJAR</p>
+                <!-- Ubah tautan tombol login -->
+                <a href="#" id="loginButton" class="login-button" data-aos="zoom-in-up" data-aos-duration="2200">Login</a>
+            </div>
+        </section>
+
+        <section id="daftar-isi" class="content">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="1000">Daftar Isi</h2>
+            <div class="subjects-grid animated-container">
+                <div class="subject-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>Bahasa</h3>
+                    <ul>
+                        <li>Bahasa Indonesia</li>
+                        <li>Bahasa Inggris</li>
+                        <li>Bahasa Arab</li>
+                    </ul>
+                    <a href='bahasa.html' class="view-material-btn">
+                        <span class="btn-text">Lihat Materi</span>
+                        <span class="btn-icon"><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                </div>
+                <div class="subject-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Sains</h3>
+                    <ul>
+                        <li>Biologi</li>
+                        <li>Fisika</li>
+                        <li>Kimia</li>
+                    </ul>
+                    <a href='sains.html' class="view-material-btn">
+                        <span class="btn-text">Lihat Materi</span>
+                        <span class="btn-icon"><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                </div>
+                <div class="subject-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <i class="fa-solid fa-house"></i>
+                    <h3>Ilmu Sosial</h3>
+                    <ul>
+                        <li>Ekonomi</li>
+                        <li>Geografi</li>
+                        <li>Sejarah</li>
+                    </ul>
+                    <a href='sosial.html' class="view-material-btn">
+                        <span class="btn-text">Lihat Materi</span>
+                        <span class="btn-icon"><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                </div>
+                <div class="subject-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Matematika</h3>
+                    <ul>
+                        <li>Aljabar</li>
+                        <li>Geometri</li>
+                        <li>Kalkulus</li>
+                    </ul>
+                    <a href='matematika.html' class="view-material-btn">
+                        <span class="btn-text">Lihat Materi</span>
+                        <span class="btn-icon"><i class="fas fa-chevron-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="about-us content">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="komite-sman78.png" alt="Komite SMAN 78 Jakarta">
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="about-text-content">
+                        <h1>Selamat Datang di SMAN 78 JAKARTA</h1>
+                        <p>Selamat datang di website resmi SMAN 78. Kami adalah sekolah menengah atas yang berdedikasi untuk menciptakan lingkungan belajar yang mendukung pengembangan potensi siswa secara akademik dan non-akademik.</p>
+                        <p>Di SMAN 78, kami percaya bahwa setiap siswa memiliki keunikan dan kemampuan yang dapat dikembangkan melalui pendidikan berkualitas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-features">
+                <div class="feature" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Pendidikan Berkualitas</span>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                    <i class="fas fa-users"></i>
+                    <span>Pengembangan Karakter</span>
+                </div>
+                <div class="feature" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Inovasi Pembelajaran</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div id="kontak" class="col-lg-6 col-md-6">
+                    <h5>Kontak</h5>
+                    <p class="small"><i class="fa fa-map-marker-alt me-2"></i>Jl. Bhakti IV/1 Komplek Pajak Kebun Jeruk, Kemanggisan Jakarta Barat 11480</p>
+                    <div class="d-flex justify-content-center justify-content-md-start">
+                        <a class="btn btn-social" href="https://www.instagram.com/sman78jkt_official/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-social" href="https://www.facebook.com/smanjupan/?locale=id_ID"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-social" href="https://www.youtube.com/@sman78jakartaofficial64"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-social" href="https://www.linkedin.com/school/sman-78-jkt/?originalSubdomain=id"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h5>Tetap Terhubung</h5>
+                    <p class="small">Daftarkan email Anda untuk kabar terbaru</p>
+                    <div class="email-signup">
+                        <input class="form-control form-control-sm" type="email" placeholder="Alamat email Anda">
+                        <button type="button" class="btn btn-primary btn-sm">Daftar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="copyright small">
+                &copy; <a href="#">SMAN 78 JAKARTA</a>, 2024. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+
+        // Tambahkan script untuk menangani klik pada tombol login
+        document.getElementById('loginButton').addEventListener('click', function(e) {
+            e.preventDefault(); // Mencegah perilaku default dari tautan
+            window.location.href = 'login.html'; // Redirect ke halaman login
+        });
+        
+        const themeSelector = document.getElementById('theme-selector');
+
+        themeSelector.addEventListener('change', function() {
+            const selectedTheme = this.value;
+            document.documentElement.setAttribute('data-theme', selectedTheme);
+        });
+
+        // Override fungsi alert untuk mencegah pop-up
+        window.alert = function() {};
+    </script>
+</body>
+</html>
